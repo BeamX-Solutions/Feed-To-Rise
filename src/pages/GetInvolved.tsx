@@ -4,8 +4,43 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Heart, Users, Handshake, Calendar } from "lucide-react";
+import { Heart, Users, Handshake, Calendar, Award, School } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+
+const donationOptions = [
+  "Donate ₦7,500 to feed a child all week",
+  "Donate ₦30,000 to feed a school child all month",
+  "Support our annual national street outreach campaign",
+  "Sponsor a specific aspect of the project, such as meals, supplies, or transportation"
+];
+
+const donorTiers = [
+  { tier: "Platinum Donor", range: "₦1,000,000 and above" },
+  { tier: "Gold Donor", range: "₦500,000 – ₦999,000" },
+  { tier: "Silver Donor", range: "₦250,000 – ₦499,000" },
+  { tier: "Bronze Donor", range: "₦100,000 – ₦249,000" }
+];
+
+const events = [
+  {
+    icon: Heart,
+    title: "Annual Street Outreach",
+    date: "February 14th, annually",
+    description: "Our annual national outreach provides food, care, and encouragement across communities in one day."
+  },
+  {
+    icon: Award,
+    title: "Donor Awards & Fundraiser Dinner",
+    date: "Annual",
+    description: "An evening to recognize our Platinum, Gold, Silver, and Bronze donors and raise funds for the year ahead."
+  },
+  {
+    icon: School,
+    title: "School Visits with Role Models",
+    date: "Monthly / weekly",
+    description: "Regular school visits where role models speak to the kids on our feeding programs, alongside meal distribution."
+  }
+];
 
 export default function GetInvolved() {
   const { toast } = useToast();
@@ -42,7 +77,7 @@ export default function GetInvolved() {
           <div className="max-w-3xl mx-auto text-center space-y-6 animate-fade-in">
             <h1>Get Involved</h1>
             <p className="text-xl text-muted-foreground text-balance">
-              Join us in spreading love and making a tangible difference in communities
+              Bring practical care today and create opportunities for tomorrow.
             </p>
           </div>
         </div>
@@ -56,7 +91,7 @@ export default function GetInvolved() {
               <Heart className="h-12 w-12 text-primary mx-auto mb-4 animate-heart-pulse" fill="currentColor" />
               <h2 className="mb-4">Make a Donation</h2>
               <p className="text-xl text-muted-foreground">
-                Support our mission to share love on the streets. Your donation contributes directly to our upcoming SLOTS' 14 events.
+                Choose the part of the journey you want to strengthen. Give directly through the bank details below.
               </p>
             </div>
 
@@ -85,22 +120,14 @@ export default function GetInvolved() {
                 <div className="space-y-4 mt-6">
                   <h3 className="font-semibold text-lg">Ways to Donate:</h3>
                   <div className="space-y-3">
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-primary text-sm font-bold">1</span>
+                    {donationOptions.map((option, index) => (
+                      <div key={index} className="flex items-start gap-3">
+                        <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <span className="text-primary text-sm font-bold">{index + 1}</span>
+                        </div>
+                        <p className="text-muted-foreground">{option}</p>
                       </div>
-                      <p className="text-muted-foreground">
-                        Donate One Hundred Thousand Naira (₦100,000) or more to support the project
-                      </p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-primary text-sm font-bold">2</span>
-                      </div>
-                      <p className="text-muted-foreground">
-                        Sponsor a specific aspect of the project, such as meals, supplies, or transportation
-                      </p>
-                    </div>
+                    ))}
                   </div>
                 </div>
 
@@ -115,6 +142,27 @@ export default function GetInvolved() {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Donor Recognition */}
+            <Card className="mt-8">
+              <CardHeader className="text-center">
+                <Award className="h-10 w-10 text-primary mx-auto mb-2" />
+                <CardTitle>Partnership recognition</CardTitle>
+                <p className="text-muted-foreground">
+                  We celebrate supporters who choose to walk with communities for the long term.
+                </p>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {donorTiers.map((tier, index) => (
+                    <div key={index} className="text-center p-4 rounded-lg bg-muted/30 border border-border">
+                      <p className="font-bold text-primary mb-1">{tier.tier}</p>
+                      <p className="text-sm text-muted-foreground">{tier.range}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -125,9 +173,9 @@ export default function GetInvolved() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <Users className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h2 className="mb-4">Become a Volunteer</h2>
+              <h2 className="mb-4">Volunteer or Mentor</h2>
               <p className="text-xl text-muted-foreground">
-                Give your time and energy to serve alongside us
+                Give your time and energy to serve alongside us, or sign up as a mentor and be paired with a student in your field or trade.
               </p>
             </div>
 
@@ -169,10 +217,24 @@ export default function GetInvolved() {
                   </div>
 
                   <div className="space-y-2">
+                    <Label htmlFor="vol-role">How would you like to serve?</Label>
+                    <Select>
+                      <SelectTrigger id="vol-role">
+                        <SelectValue placeholder="Select a role" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="volunteer">Outreach Volunteer</SelectItem>
+                        <SelectItem value="mentor">Mentor</SelectItem>
+                        <SelectItem value="both">Both</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="space-y-2">
                     <Label htmlFor="vol-skills">Skills & Interests</Label>
                     <Textarea
                       id="vol-skills"
-                      placeholder="Tell us about your skills, interests, and how you'd like to contribute..."
+                      placeholder="Tell us about your skills, interests, and how you'd like to contribute. Mentors: mention your field or trade so we can pair you with the right student..."
                       rows={4}
                     />
                   </div>
@@ -239,7 +301,7 @@ export default function GetInvolved() {
                     <Label htmlFor="partnership-details">Partnership Proposal</Label>
                     <Textarea
                       id="partnership-details"
-                      placeholder="Describe how you'd like to partner with SLOTS..."
+                      placeholder="Describe how you'd like to partner with Feed to Rise..."
                       rows={5}
                       required
                     />
@@ -261,22 +323,28 @@ export default function GetInvolved() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Calendar className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h2 className="mb-4">Upcoming Events</h2>
+            <h2 className="mb-4">Events & Programs</h2>
             <p className="text-xl text-muted-foreground">
-              Join us at our next community gathering
+              Join us at our next gathering
             </p>
           </div>
 
-          <Card className="max-w-3xl mx-auto">
-            <CardContent className="pt-8 text-center">
-              <p className="text-muted-foreground mb-6">
-                Event calendar coming soon. Check back for volunteer opportunities and community events.
-              </p>
-              <Button variant="outline">
-                Subscribe for Event Updates
-              </Button>
-            </CardContent>
-          </Card>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {events.map((event, index) => (
+              <Card key={index} className="hover:shadow-glow transition-all duration-300">
+                <CardHeader>
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                    <event.icon className="h-7 w-7 text-primary" />
+                  </div>
+                  <CardTitle className="text-xl">{event.title}</CardTitle>
+                  <p className="text-sm font-semibold text-primary">{event.date}</p>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{event.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
     </div>

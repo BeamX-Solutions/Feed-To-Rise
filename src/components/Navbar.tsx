@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BrandMark } from "@/components/BrandMark";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -22,14 +23,7 @@ export const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <img 
-              src="/images/slots-logo.png" 
-              alt="SLOTS Humanitarian Initiatives" 
-              className="h-10 md:h-12 w-auto transition-transform group-hover:scale-105"
-            />
-          </Link>
+          <BrandMark />
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">

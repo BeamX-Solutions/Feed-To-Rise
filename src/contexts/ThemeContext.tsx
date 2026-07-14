@@ -18,7 +18,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       return urlTheme;
     }
     // Fallback to localStorage
-    return (localStorage.getItem("slots-theme") as Theme) || "default";
+    return (localStorage.getItem("feed-to-rise-theme") as Theme) || "default";
   });
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       root.setAttribute("data-theme", theme);
     }
     // Save to localStorage
-    localStorage.setItem("slots-theme", theme);
+    localStorage.setItem("feed-to-rise-theme", theme);
   }, [theme]);
 
   return (

@@ -2,19 +2,20 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Target, Eye, Users } from "lucide-react";
 
 const milestones = [
-  { year: "2020", title: "SLOTS' 14 Founded", description: "The SLOTS' 14 project started with the sole purpose of 'sharing love on the street' to those in need. First outreach in Anambra and Lagos on February 14th." },
+  { year: "2020", title: "The journey begins", description: "Our work began with a simple purpose: bring practical care to people in need. The first outreach took place in Anambra and Lagos on February 14th." },
   { year: "2021", title: "Three States Reached", description: "Expanded operations to Anambra, Lagos, and Abuja. Community support growing through personal and public donations." },
   { year: "2022", title: "Adding Enugu", description: "Extended love and support to Enugu, bringing the total to four states. Volunteer network continues to strengthen." },
   { year: "2023", title: "Port Harcourt Joins", description: "Reached Port Harcourt alongside Anambra, Lagos, and Enugu. Impact spreading across southern Nigeria." },
   { year: "2024", title: "Five State Outreach", description: "Historic expansion to Anambra, Lagos, Benin, Abuja, and Nasarawa. Thousands of meals distributed and countless lives touched." },
-  { year: "2025", title: "Looking Forward", description: "Planning SLOTS' 14 2025 with expanded reach and greater impact. Continuing the mission to share love on the streets every February 14th." }
+  { year: "2025", title: "Seven States, One Day", description: "Our annual outreach reached seven states in a single day, powered by a growing national volunteer network." },
+  { year: "2026", title: "Feed to Rise", description: "Evolving from annual relief into a year-round pathway: Feed to Nourish, Feed to Equip, and Rise. Feeding the body is the first step to feeding the mind." }
 ];
 
 const team = [
-  { name: "Mmesoma Anita Ogbuagu", role: "SLOTS' 14 Convener", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" },
-  { name: "Volunteer Team", role: "Community Champions", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" },
-  { name: "Field Coordinators", role: "State Leaders", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" },
-  { name: "Our Partners", role: "Supporting Organizations", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80" }
+  { name: "Mmesoma Anita Ogbuagu", role: "Feed to Rise Convener", image: "/images/anambra-lagos-2024-III.PNG" },
+  { name: "Volunteer Team", role: "Community Champions", image: "/images/anambra-lagos-2021-II.jpg" },
+  { name: "Field Coordinators", role: "State Leaders", image: "/images/anambra-lagos-2023-II.PNG" },
+  { name: "Our Partners", role: "Supporting Organizations", image: "/images/anambra-lagos-2022-II.PNG" }
 ];
 
 export default function About() {
@@ -24,9 +25,9 @@ export default function About() {
       <section className="py-16 md:py-24 bg-gradient-hero">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6 animate-fade-in">
-            <h1>About SLOTS</h1>
+            <h1>About Feed to Rise</h1>
             <p className="text-xl text-muted-foreground text-balance">
-              SLOTS' 14 started in 2020 with the sole purpose of sharing love on the street to those in need. Each year on February 14th, we provide meals and necessities through personal and public donations.
+              Our work started in 2020 with a commitment to reach people in need with care. Today, Feed to Rise turns that care into a pathway: food and provisions first, followed by opportunities to learn, earn, and grow.
             </p>
           </div>
         </div>
@@ -43,7 +44,7 @@ export default function About() {
                 </div>
                 <h3>Our Mission</h3>
                 <p className="text-muted-foreground">
-                  To share love on the streets through our annual February 14th outreach, providing meals, clothing, blankets, and hygiene kits to those in need across Nigeria. Making people smile and feel loved.
+                  To provide food, clothing, and provisions to children and displaced or struggling people across Nigeria, and by meeting the most basic needs first, open the way to shelter, education, and vocational skills so every person we feed can rise to their potential.
                 </p>
               </CardContent>
             </Card>

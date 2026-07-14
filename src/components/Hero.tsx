@@ -4,33 +4,33 @@ import { Heart, ArrowRight } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[85vh] flex items-center bg-gradient-hero overflow-hidden">
+    <section className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden bg-gradient-hero md:min-h-[calc(100vh-5rem)]">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(220,38,38,0.08),transparent_50%)]" />
-      
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
+
+      <div className="container mx-auto px-4 py-8 md:py-10">
+        <div className="max-w-4xl mx-auto text-center space-y-6 animate-fade-in">
           {/* Heart Icon */}
           <div className="flex justify-center">
             <div className="relative">
-              <Heart className="h-16 w-16 md:h-20 md:w-20 text-primary animate-heart-pulse" fill="currentColor" />
+              <Heart className="h-14 w-14 md:h-16 md:w-16 text-primary animate-heart-pulse" fill="currentColor" />
               <div className="absolute inset-0 bg-primary/20 blur-2xl animate-pulse-slow" />
             </div>
           </div>
 
           {/* Heading */}
           <h1 className="text-balance">
-            <span className="block text-foreground">Sharing Love</span>
-            <span className="block text-primary mt-2">On The Streets</span>
+            <span className="block text-foreground">Every Person Deserves</span>
+            <span className="block text-primary mt-2">The Chance to Rise</span>
           </h1>
 
           {/* Tagline */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto text-balance">
-            One Act at a Time. Bringing hope, dignity, and compassion to communities across Nigeria.
+            Feed to Rise meets urgent needs with food and care, then opens pathways to education, skills, and independence.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-2">
             <Button asChild size="lg" className="w-full sm:w-auto text-base group">
               <Link to="/involve">
                 Donate Now
@@ -38,7 +38,7 @@ export const Hero = () => {
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="w-full sm:w-auto text-base group">
-              <Link to="/work">
+              <Link to="/impact">
                 See Our Work
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -46,12 +46,12 @@ export const Hero = () => {
           </div>
 
           {/* Quick Stats */}
-          <div className="pt-8 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+          <div className="pt-6 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
             {[
-              { value: "1000s", label: "Meals Shared" },
-              { value: "8", label: "States Reached" },
-              { value: "5", label: "Years Impact" },
-              { value: "Feb 14", label: "Annual Event" },
+              { value: "7", label: "States in One Day (2025)" },
+              { value: "1000s", label: "Meals Shared Since 2020" },
+              { value: "6", label: "Annual Outreaches" },
+              { value: "Feb 14", label: "Annual Street Outreach" },
             ].map((stat, index) => (
               <div
                 key={index}

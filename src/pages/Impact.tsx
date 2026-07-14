@@ -1,71 +1,100 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Progress } from "@/components/ui/progress";
-import { Quote, TrendingUp, Users, Heart, Package, UtensilsCrossed, Shirt, Home, Calendar } from "lucide-react";
+import { Quote, TrendingUp, Users, Heart, Package, UtensilsCrossed, GraduationCap, Wrench, Briefcase, Calendar } from "lucide-react";
 
 const programs = [
   {
     icon: Heart,
-    title: "SLOTS' 14 - Annual Valentine's Day Outreach",
-    description: "Our signature event held every February 14th, spreading love with meals, clothing, and care packages to those living on the streets.",
-    impact: "Thousands reached annually since 2020",
-    details: "The core mission of SLOTS. Each year on February 14th, we transform Valentine's Day into a community-wide celebration of compassion. Our teams distribute love packages containing meals, clothing, blankets, hygiene kits, and encouragement to individuals and families in need across multiple states."
+    stage: "Feed to Nourish",
+    title: "Annual Street Outreach",
+    description: "Our annual February 14th outreach provides meals, clothing, blankets, hygiene kits, and care to people living on the streets.",
+    impact: "Now across seven states in one day",
+    details: "A cornerstone of our work. Each year on February 14th, we bring a community-wide expression of compassion to people who need it most. Our teams distribute meals, clothing, blankets, hygiene kits, and encouragement to individuals and families, now across seven states in a single day."
   },
   {
     icon: UtensilsCrossed,
-    title: "Meal Distribution",
-    description: "Providing nutritious meals and food packages to individuals and families living on the streets.",
-    impact: "Thousands of meals distributed",
-    details: "Our flagship program delivers hot meals and food packages directly to communities in need. We work to ensure everyone we meet on February 14th receives a warm meal and knows they are loved and valued."
+    stage: "Feed to Nourish",
+    title: "School Feeding - Adopt a Student",
+    description: "Weekly and monthly meal programs for public school students, structured through partnerships with schools.",
+    impact: "A fed child has more energy and focus to learn",
+    details: "Through partnerships with public schools, we run weekly and monthly feeding programs, donating to the school directly or adopting a number of students who receive meals from the organization. Feeding the body is the first step to feeding the mind."
   },
   {
-    icon: Shirt,
-    title: "Clothing & Blankets",
-    description: "Distributing quality clothing and warm blankets to those experiencing homelessness and poverty.",
-    impact: "Essential supplies distributed annually",
-    details: "We provide clothing and blankets to enhance the well-being and dignity of those on the streets. During our February 14th outreach, we ensure everyone receives warm clothing and blankets to help them through difficult times."
+    icon: Package,
+    stage: "Feed to Nourish",
+    title: "Provisions for Families",
+    description: "Basic provisions, including food, clothing, and essential supplies, for displaced and struggling families.",
+    impact: "Essential supplies distributed year-round",
+    details: "Beyond the streets and schools, we provide food, clothing, and essential provisions to displaced and struggling families, meeting the most basic needs first so that other needs, including shelter, education, and skills, can be addressed next."
   },
   {
-    icon: Home,
-    title: "Hygiene Kits",
-    description: "Providing personal hygiene supplies to promote health and dignity for those in need.",
-    impact: "Kits distributed across all outreach locations",
-    details: "Our hygiene kits include essential items like soap, toothpaste, towels, and other personal care products. We believe everyone deserves to maintain their dignity and health, regardless of their circumstances."
+    icon: GraduationCap,
+    stage: "Feed to Equip",
+    title: "JAMB Sponsorship Pipeline",
+    description: "Full JAMB sponsorship for students on our meal plans, including lessons, registration payments, and transportation to exam centers.",
+    impact: "From the meal plan to the exam hall",
+    details: "In line with our name, students who have been on the meal plan receive sponsorship for all their JAMB lessons, registration payments, and transportation to the exam centers. It is a complete pipeline from feeding to further education."
+  },
+  {
+    icon: Wrench,
+    stage: "Feed to Equip",
+    title: "Vocational Skills & Scholarships",
+    description: "Vocational and trade skills training, plus school materials and scholarships for younger children still in school.",
+    impact: "Skills that outlast the meal",
+    details: "For beneficiaries pursuing a trade, we provide vocational and trade skills training. For younger children still in school, we provide school materials and scholarships, building the skills and education needed to move past urgent need."
   },
   {
     icon: Users,
-    title: "Community Events",
-    description: "Regular gatherings that build community, provide resources, and celebrate together.",
-    impact: "Monthly community events",
-    details: "Beyond material aid, we foster community through regular events including health fairs, skill-building workshops, holiday celebrations, and family fun days. These gatherings create connections and combat isolation."
+    stage: "Feed to Equip",
+    title: "Mentors & Alumni Network",
+    description: "Mentor pairings tied to each student's chosen field or trade, rather than generic matches, plus an alumni network of former beneficiaries.",
+    impact: "Relationships that open doors",
+    details: "People can sign up as mentors with Feed to Rise, and we pair them with beneficiaries based on the student's chosen field or trade. Former beneficiaries who've risen come back to support new ones, and partnerships with artisans, small businesses, and employers create placement opportunities."
+  },
+  {
+    icon: Briefcase,
+    stage: "Rise",
+    title: "Small Business Support",
+    description: "Startup and small business support for beneficiaries who complete vocational training.",
+    impact: "From training to independence",
+    details: "Rise is the point where the feeding is done and independence takes over. Beneficiaries who finish vocational training receive small business and startup support to stand on their own."
+  },
+  {
+    icon: TrendingUp,
+    stage: "Rise",
+    title: "Outcomes Tracking",
+    description: "University enrollment tracking from JAMB to admission, and income or employment follow-up after the program.",
+    impact: "Proof that someone actually made it out",
+    details: "We track university enrollment from JAMB through admission to a first-year check-in, and follow income or employment 6-12 months after the program because Rise is the proof that someone actually made it out."
   }
 ];
 
 const impactStats = [
-  { label: "Meals Distributed", value: "1000s", icon: Package, color: "text-primary" },
-  { label: "Years of Impact", value: "5", icon: TrendingUp, color: "text-primary" },
-  { label: "States Reached", value: "8", icon: Heart, color: "text-primary" },
-  { label: "Annual Events", value: "1", icon: Users, color: "text-primary" }
+  { label: "Meals shared since 2020", value: "1000s", icon: Package, color: "text-primary" },
+  { label: "Annual outreaches, 2020–2025", value: "6", icon: TrendingUp, color: "text-primary" },
+  { label: "States reached since 2020", value: "8", icon: Heart, color: "text-primary" },
+  { label: "States served in one day, 2025", value: "7", icon: Users, color: "text-primary" }
 ];
 
 const testimonials = [
   {
     quote: "We distributed thousands of meals to individuals and families in need, bringing nourishment and hope to those who need it most.",
-    author: "SLOTS Team",
+    author: "Feed to Rise Team",
     location: "Multiple States",
-    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=80"
+    image: "/images/anambra-lagos-2020-II.jpg"
   },
   {
     quote: "Providing essential supplies such as clothing, blankets, and hygiene kits has enhanced the well-being of countless people living on the streets.",
     author: "Volunteer Coordinator",
     location: "Lagos & Abuja",
-    image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=400&q=80"
+    image: "/images/anambra-lagos-2022-III.PNG"
   },
   {
     quote: "Most of all, we made people smile and feel loved. Raising awareness about the importance of compassion in the community is our greatest achievement.",
     author: "Mmesoma Anita Ogbuagu",
-    location: "SLOTS' 14 Convener",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80"
+    location: "Feed to Rise Convener",
+    image: "/images/anambra-lagos-2023-III.PNG"
   }
 ];
 
@@ -90,7 +119,7 @@ export default function Impact() {
           <div className="text-center mb-12">
             <h2 className="mb-4">Our Programs</h2>
             <p className="text-xl text-muted-foreground">
-              Multi-faceted initiatives addressing urgent needs
+              Every program sits on the Feed to Rise pathway. Feed meets the urgent need, Equip builds the skills to move past it, and Rise is the proof that someone made it out.
             </p>
           </div>
 
@@ -105,6 +134,7 @@ export default function Impact() {
                   <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                     <program.icon className="h-7 w-7 text-primary" />
                   </div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">{program.stage}</p>
                   <CardTitle className="text-xl">{program.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -193,11 +223,11 @@ export default function Impact() {
                     Locations: <span className="font-semibold text-foreground">Anambra, Lagos</span>
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    In our inaugural year, we launched SLOTS with a simple yet powerful mission: to share love and provide essential support to those living on the streets.
+                    In our inaugural year, we began with a simple mission: to provide care and essential support to people living on the streets.
                   </p>
                 </div>
                 <div className="grid grid-cols-2 gap-2 p-2">
-                  <img src="images\anambra-lagos-2020-I.jpg"  alt="SLOTS 2020 outreach in Anambra and Lagos" className="w-full h-full object-cover rounded" />
+                  <img src="/images/anambra-lagos-2020-I.jpg"  alt="2020 outreach in Anambra and Lagos" className="w-full h-full object-cover rounded" />
                   <img src="images\anambra-lagos-2020-II.jpg" alt="Volunteers distributing care packages in 2020" className="w-full h-full object-cover rounded" />
                   <img src="images\anambra-lagos-2020-III.jpg" alt="Community engagement 2020" className="w-full h-full object-cover rounded" />
                   <img src="images\anambra-lagos-2020-IV.jpg" alt="Sharing meals and supplies 2020" className="w-full h-full object-cover rounded" />
@@ -209,7 +239,7 @@ export default function Impact() {
             <Card className="overflow-hidden">
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="grid grid-cols-2 gap-2 p-2 md:order-1">
-                  <img src="images\anambra-lagos-2021-I.jpg" alt="SLOTS 2021 team celebrating with community" className="w-full h-full object-cover rounded" />
+                  <img src="/images/anambra-lagos-2021-I.jpg" alt="2021 team celebrating with community" className="w-full h-full object-cover rounded" />
                   <img src="images\anambra-lagos-2021-II.jpg" alt="Volunteers distributing love packages in 2021" className="w-full h-full object-cover rounded" />
                   <img src="images\anambra-lagos-2021-III.jpg" alt="Community outreach 2021" className="w-full h-full object-cover rounded col-span-2" />
                 </div>
@@ -246,7 +276,7 @@ export default function Impact() {
                   </p>
                 </div>
                 <div className="grid grid-cols-2 gap-2 p-2">
-                  <img src="images\anambra-lagos-2022-I.PNG"  alt="SLOTS 2022 outreach in Anambra and Lagos" className="w-full h-full object-cover rounded" />
+                  <img src="/images/anambra-lagos-2022-I.PNG"  alt="2022 outreach in Anambra and Lagos" className="w-full h-full object-cover rounded" />
                   <img src="images\anambra-lagos-2022-II.PNG" alt="Volunteers distributing care packages in 2022" className="w-full h-full object-cover rounded" />
                   <img src="images\anambra-lagos-2022-III.PNG" alt="Community engagement 2022" className="w-full h-full object-cover rounded col-span-2" />
                 </div>
@@ -257,7 +287,7 @@ export default function Impact() {
             <Card className="overflow-hidden">
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="grid grid-cols-2 gap-2 p-2 md:order-1">
-                  <img src="images\anambra-lagos-2023-I.PNG" alt="SLOTS 2023 team celebrating with community" className="w-full h-full object-cover rounded" />
+                  <img src="/images/anambra-lagos-2023-I.PNG" alt="2023 team celebrating with community" className="w-full h-full object-cover rounded" />
                   <img src="images\anambra-lagos-2023-II.PNG" alt="Volunteers distributing love packages in 2023" className="w-full h-full object-cover rounded" />
                   <img src="images\anambra-lagos-2023-III.PNG" alt="Community outreach 2023" className="w-full h-full object-cover rounded col-span-2" />
                 </div>
@@ -294,7 +324,7 @@ export default function Impact() {
                   </p>
                 </div>
                 <div className="grid grid-cols-2 gap-2 p-2">
-                  <img src="images\anambra-lagos-2024-I.PNG"  alt="SLOTS 2024 outreach in Anambra and Lagos" className="w-full h-full object-cover rounded" />
+                  <img src="/images/anambra-lagos-2024-I.PNG"  alt="2024 outreach in Anambra and Lagos" className="w-full h-full object-cover rounded" />
                   <img src="images\anambra-lagos-2024-II.PNG" alt="Volunteers distributing care packages in 2024" className="w-full h-full object-cover rounded" />
                   <img src="images\anambra-lagos-2024-III.PNG" alt="Community engagement 2024" className="w-full h-full object-cover rounded col-span-2" />
                 </div>

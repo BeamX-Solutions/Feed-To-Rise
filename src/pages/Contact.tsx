@@ -95,7 +95,7 @@ export default function Contact() {
                         +234 904 140 1167
                       </a>
                       <p className="text-sm text-muted-foreground mt-2">Mmesoma Anita Ogbuagu</p>
-                      <p className="text-xs text-muted-foreground">SLOTS' 14 Convener</p>
+                      <p className="text-xs text-muted-foreground">Feed to Rise Convener</p>
                     </div>
                   </div>
 
@@ -104,10 +104,8 @@ export default function Contact() {
                       <Mail className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-2">Email</h3>
-                      <a href="mailto:info@slotsng.org" className="text-primary hover:underline block">
-                        info@slotsng.org
-                      </a>
+                      <h3 className="font-semibold mb-2">Send an enquiry</h3>
+                      <p className="text-sm text-muted-foreground">Use the form and our team will respond to your message.</p>
                     </div>
                   </div>
 

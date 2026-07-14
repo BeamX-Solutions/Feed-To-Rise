@@ -14,7 +14,7 @@ const Privacy = () => {
             <section>
               <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
               <p className="text-muted-foreground">
-                SLOTS (Sharing Love On The Streets) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or interact with our organization.
+                Feed to Rise is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or interact with our organization.
               </p>
             </section>
 
@@ -106,7 +106,7 @@ const Privacy = () => {
                 If you have questions about this Privacy Policy or wish to exercise your rights, please contact us:
               </p>
               <div className="text-muted-foreground space-y-2 ml-4">
-                <p><strong>Email:</strong> info@slotsng.org</p>
+                <p><strong>Contact:</strong> Please use our contact form or call us.</p>
                 <p><strong>Phone:</strong> +234 904 140 1167</p>
                 <p><strong>Location:</strong> Lagos & Abuja, Nigeria</p>
               </div>
