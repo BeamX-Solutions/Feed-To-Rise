@@ -1,7 +1,15 @@
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Progress } from "@/components/ui/progress";
-import { Quote, TrendingUp, Users, Heart, Package, UtensilsCrossed, GraduationCap, Wrench, Briefcase, Calendar } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Quote, TrendingUp, Users, Heart, Package, UtensilsCrossed, GraduationCap, Wrench, Briefcase, Calendar, ArrowRight } from "lucide-react";
+
+const stageLinks = [
+  { slug: "nourish", label: "Feed to Nourish", icon: UtensilsCrossed },
+  { slug: "equip", label: "Feed to Equip", icon: GraduationCap },
+  { slug: "rise", label: "Rise", icon: TrendingUp },
+];
 
 const programs = [
   {
@@ -118,9 +126,20 @@ export default function Impact() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="mb-4">Our Programs</h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Every program sits on the Feed to Rise pathway. Feed meets the urgent need, Equip builds the skills to move past it, and Rise is the proof that someone made it out.
             </p>
+            <div className="flex flex-wrap justify-center gap-3 mt-8">
+              {stageLinks.map((stage) => (
+                <Button key={stage.slug} asChild variant="outline" className="group">
+                  <Link to={`/pathway/${stage.slug}`}>
+                    <stage.icon className="mr-2 h-4 w-4 text-primary" />
+                    {stage.label}
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              ))}
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">

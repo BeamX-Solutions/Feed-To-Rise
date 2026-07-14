@@ -9,6 +9,7 @@ const pathway = [
     icon: Heart,
     number: "01",
     title: "Nourish",
+    slug: "nourish",
     description: "Food, care packages, school meals, and immediate support for people facing urgent need.",
     outcome: "A fuller plate today",
   },
@@ -16,6 +17,7 @@ const pathway = [
     icon: BookOpen,
     number: "02",
     title: "Equip",
+    slug: "equip",
     description: "Learning support, school materials, vocational training, and mentors connected to each learner's goals.",
     outcome: "Tools for tomorrow",
   },
@@ -23,6 +25,7 @@ const pathway = [
     icon: TrendingUp,
     number: "03",
     title: "Rise",
+    slug: "rise",
     description: "Business support, further-education follow-up, and a community that keeps opportunity within reach.",
     outcome: "Independence that lasts",
   },
@@ -66,23 +69,30 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {pathway.map((step, index) => (
-              <Card
+              <Link
                 key={step.number}
-                className="text-center hover:shadow-glow transition-all duration-300 animate-fade-in"
+                to={`/pathway/${step.slug}`}
+                className="group block animate-fade-in"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <CardHeader>
-                  <div className="mx-auto mb-4 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                    <step.icon className="h-8 w-8 text-primary" />
-                  </div>
-                  <p className="text-sm font-bold tracking-widest text-primary">{step.number}</p>
-                  <CardTitle className="text-2xl">{step.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground">{step.description}</p>
-                  <p className="pt-4 border-t border-border text-sm font-semibold text-primary">{step.outcome}</p>
-                </CardContent>
-              </Card>
+                <Card className="h-full text-center hover:shadow-glow hover:border-primary/40 transition-all duration-300">
+                  <CardHeader>
+                    <div className="mx-auto mb-4 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                      <step.icon className="h-8 w-8 text-primary" />
+                    </div>
+                    <p className="text-sm font-bold tracking-widest text-primary">{step.number}</p>
+                    <CardTitle className="text-2xl">{step.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-muted-foreground">{step.description}</p>
+                    <p className="pt-4 border-t border-border text-sm font-semibold text-primary">{step.outcome}</p>
+                    <span className="inline-flex items-center text-sm font-semibold text-primary">
+                      Explore {step.title}
+                      <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
 

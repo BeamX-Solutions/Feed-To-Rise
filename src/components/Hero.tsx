@@ -1,14 +1,49 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Heart, ArrowRight } from "lucide-react";
 
-export const Hero = () => {
-  return (
-    <section className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden bg-gradient-hero md:min-h-[calc(100vh-5rem)]">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(220,38,38,0.08),transparent_50%)]" />
+const slides = [
+  "/images/anambra-lagos-2024-I.PNG",
+  "/images/anambra-lagos-2023-I.PNG",
+  "/images/anambra-lagos-2022-III.PNG",
+  "/images/anambra-lagos-2021-I.jpg",
+  "/images/anambra-lagos-2020-I.jpg",
+];
 
-      <div className="container mx-auto px-4 py-8 md:py-10">
+export const Hero = () => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <section className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden bg-background md:min-h-[calc(100vh-5rem)]">
+      {/* Silhouette carousel */}
+      <div className="absolute inset-0">
+        {slides.map((src, index) => (
+          <img
+            key={src}
+            src={src}
+            alt=""
+            aria-hidden="true"
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity [transition-duration:2000ms] ease-in-out ${
+              index === current ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ filter: "grayscale(70%) contrast(1.05)" }}
+          />
+        ))}
+        {/* Red + dark wash that turns the photos into silhouettes */}
+        <div className="absolute inset-0 bg-background/75" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/35 via-background/50 to-background/85" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(220,38,38,0.18),transparent_55%)]" />
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4 py-8 md:py-10">
         <div className="max-w-4xl mx-auto text-center space-y-6 animate-fade-in">
           {/* Heart Icon */}
           <div className="flex justify-center">
@@ -61,6 +96,21 @@ export const Hero = () => {
                 <p className="text-2xl md:text-3xl font-bold text-primary">{stat.value}</p>
                 <p className="text-sm text-muted-foreground">{stat.label}</p>
               </div>
+            ))}
+          </div>
+
+          {/* Carousel Indicators */}
+          <div className="flex justify-center gap-2 pt-2">
+            {slides.map((src, index) => (
+              <button
+                key={src}
+                type="button"
+                aria-label={`Show background image ${index + 1}`}
+                onClick={() => setCurrent(index)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  index === current ? "w-6 bg-primary" : "w-1.5 bg-muted-foreground/40 hover:bg-muted-foreground/70"
+                }`}
+              />
             ))}
           </div>
         </div>
