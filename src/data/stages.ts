@@ -32,7 +32,7 @@ export const stages: Stage[] = [
     fullName: "Feed to Nourish",
     tagline: "Immediate relief",
     intro:
-      "Every stage of Feed to Rise starts with feeding. Nourish meets the most urgent need first — food and provisions for people facing hunger and hardship, so the work of learning and rising can begin.",
+      "Every stage of Feed to Rise starts with feeding. Nourish meets the most urgent need first: food and provisions for people facing hunger and hardship, so the work of learning and rising can begin.",
     quote:
       "A child who is fed has more energy and focus to learn. Feeding the body is the first step to feeding the mind.",
     icon: UtensilsCrossed,
@@ -45,7 +45,7 @@ export const stages: Stage[] = [
             icon: UtensilsCrossed,
             title: "Street & community feeding",
             description:
-              "Our original SLOTS model — sharing meals, clothing, blankets, and care directly on the streets. Now across seven states in a single day.",
+              "Our original SLOTS model: sharing meals, clothing, blankets, and care directly on the streets. Now across seven states in a single day.",
           },
           {
             icon: School,
@@ -70,7 +70,7 @@ export const stages: Stage[] = [
     fullName: "Feed to Equip",
     tagline: "Skills, education, relationships",
     intro:
-      "Relief alone doesn’t change a life. Equip builds on Nourish by giving people the education, skills, and relationships they need to move past urgent need — and stay past it.",
+      "Relief alone doesn’t change a life. Equip builds on Nourish by giving people the education, skills, and relationships they need to move past urgent need, and stay past it.",
     icon: GraduationCap,
     image: "/images/anambra-lagos-2023-I.PNG",
     groups: [
@@ -81,7 +81,7 @@ export const stages: Stage[] = [
             icon: Cap,
             title: "JAMB sponsorship pipeline",
             description:
-              "Full sponsorship for students on our meal plans — lessons, registration, and transport to exam centers.",
+              "Full sponsorship for students on our meal plans: lessons, registration, and transport to exam centers.",
           },
           {
             icon: Wrench,
@@ -104,7 +104,7 @@ export const stages: Stage[] = [
             icon: Users,
             title: "Mentor pairing",
             description:
-              "Mentors matched to each student’s chosen field or trade — specific and relevant, never generic.",
+              "Mentors matched to each student’s chosen field or trade: specific and relevant, never generic.",
           },
           {
             icon: TrendingUp,
@@ -129,7 +129,7 @@ export const stages: Stage[] = [
     fullName: "Rise",
     tagline: "Independence & outcomes",
     intro:
-      "Rise is the point where the feeding is done and independence takes over. It’s also where we hold ourselves accountable — tracking what actually happened after the program.",
+      "Rise is the point where the feeding is done and independence takes over. It’s also where we hold ourselves accountable, tracking what actually happened after the program.",
     icon: TrendingUp,
     image: "/images/anambra-lagos-2022-III.PNG",
     groups: [
@@ -152,7 +152,7 @@ export const stages: Stage[] = [
             icon: LineChart,
             title: "Income & employment tracking",
             description:
-              "Checking in on income or employment 6–12 months after the program — the proof that someone made it out.",
+              "Checking in on income or employment 6–12 months after the program: the proof that someone made it out.",
           },
         ],
       },

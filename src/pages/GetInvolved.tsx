@@ -7,18 +7,20 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Heart, Users, Handshake, Calendar, Award, School } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
+// Amount-led rows, per the brand board: the naira figure carries the row.
 const donationOptions = [
-  "Donate ₦7,500 to feed a child all week",
-  "Donate ₦30,000 to feed a school child all month",
-  "Support our annual national street outreach campaign",
-  "Sponsor a specific aspect of the project, such as meals, supplies, or transportation"
+  { amount: "₦7,500", text: "feeds one child for a full week." },
+  { amount: "₦30,000", text: "feeds a school child for a whole month." },
+  { amount: null, text: "Support our annual national street outreach campaign." },
+  { amount: null, text: "Sponsor a specific part of the work: meals, supplies, or transportation." }
 ];
 
+// Each tier carries its own bar colour, drawn from the brand ramp.
 const donorTiers = [
-  { tier: "Platinum Donor", range: "₦1,000,000 and above" },
-  { tier: "Gold Donor", range: "₦500,000 – ₦999,000" },
-  { tier: "Silver Donor", range: "₦250,000 – ₦499,000" },
-  { tier: "Bronze Donor", range: "₦100,000 – ₦249,000" }
+  { tier: "Platinum", range: "₦1,000,000 and above", bar: "bg-brand-ground" },
+  { tier: "Gold", range: "₦500,000 – ₦999,000", bar: "bg-brand-accent" },
+  { tier: "Silver", range: "₦250,000 – ₦499,000", bar: "bg-brand-lead" },
+  { tier: "Bronze", range: "₦100,000 – ₦249,000", bar: "bg-brand-bronze" }
 ];
 
 const events = [
@@ -72,7 +74,7 @@ export default function GetInvolved() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-hero">
+      <section data-surface="navy" className="bg-gradient-ground py-16 text-foreground md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6 animate-fade-in">
             <h1>Get Involved</h1>
@@ -88,7 +90,7 @@ export default function GetInvolved() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <Heart className="h-12 w-12 text-primary mx-auto mb-4 animate-heart-pulse" fill="currentColor" />
+              <Heart className="h-12 w-12 text-primary-ink mx-auto mb-4 animate-heart-pulse" fill="currentColor" />
               <h2 className="mb-4">Make a Donation</h2>
               <p className="text-xl text-muted-foreground">
                 Choose the part of the journey you want to strengthen. Give directly through the bank details below.
@@ -101,7 +103,7 @@ export default function GetInvolved() {
               </CardHeader>
               <CardContent className="space-y-6">
                 {/* Bank Details */}
-                <div className="space-y-4 p-6 bg-muted/30 rounded-lg">
+                <div className="space-y-4 rounded-xl bg-muted p-6">
                   <div className="flex justify-between items-center border-b border-border pb-3">
                     <span className="text-muted-foreground">Account Name:</span>
                     <span className="font-semibold">Slots Humanitarian Initiatives</span>
@@ -121,11 +123,18 @@ export default function GetInvolved() {
                   <h3 className="font-semibold text-lg">Ways to Donate:</h3>
                   <div className="space-y-3">
                     {donationOptions.map((option, index) => (
-                      <div key={index} className="flex items-start gap-3">
-                        <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <span className="text-primary text-sm font-bold">{index + 1}</span>
-                        </div>
-                        <p className="text-muted-foreground">{option}</p>
+                      <div
+                        key={index}
+                        className="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-xl border border-border bg-background px-5 py-4"
+                      >
+                        {option.amount ? (
+                          <>
+                            <span className="text-xl font-extrabold tracking-tight text-secondary">{option.amount}</span>
+                            <span className="text-muted-foreground">{option.text}</span>
+                          </>
+                        ) : (
+                          <span className="text-muted-foreground">{option.text}</span>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -135,7 +144,7 @@ export default function GetInvolved() {
                 <div className="mt-6 p-4 bg-primary/5 border border-primary/10 rounded-lg">
                   <p className="text-sm text-muted-foreground text-center">
                     For inquiries or to confirm your donation, please contact us at{" "}
-                    <a href="tel:+2349041401167" className="text-primary font-semibold hover:underline">
+                    <a href="tel:+2349041401167" className="text-primary-ink font-semibold hover:underline">
                       +234 904 140 1167
                     </a>
                   </p>
@@ -146,7 +155,7 @@ export default function GetInvolved() {
             {/* Donor Recognition */}
             <Card className="mt-8">
               <CardHeader className="text-center">
-                <Award className="h-10 w-10 text-primary mx-auto mb-2" />
+                <Award className="h-10 w-10 text-primary-ink mx-auto mb-2" />
                 <CardTitle>Partnership recognition</CardTitle>
                 <p className="text-muted-foreground">
                   We celebrate supporters who choose to walk with communities for the long term.
@@ -155,8 +164,12 @@ export default function GetInvolved() {
               <CardContent>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   {donorTiers.map((tier, index) => (
-                    <div key={index} className="text-center p-4 rounded-lg bg-muted/30 border border-border">
-                      <p className="font-bold text-primary mb-1">{tier.tier}</p>
+                    <div
+                      key={index}
+                      className="rounded-xl border border-border bg-background p-5 text-center"
+                    >
+                      <span className={`mx-auto mb-3 block h-1.5 w-10 rounded-full ${tier.bar}`} />
+                      <p className="mb-1 font-bold text-secondary">{tier.tier}</p>
                       <p className="text-sm text-muted-foreground">{tier.range}</p>
                     </div>
                   ))}
@@ -168,11 +181,11 @@ export default function GetInvolved() {
       </section>
 
       {/* Volunteer Section */}
-      <section id="volunteer" className="py-16 md:py-24 bg-muted/30">
+      <section id="volunteer" className="py-16 md:py-24 bg-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <Users className="h-12 w-12 text-primary mx-auto mb-4" />
+              <Users className="h-12 w-12 text-primary-ink mx-auto mb-4" />
               <h2 className="mb-4">Volunteer or Mentor</h2>
               <p className="text-xl text-muted-foreground">
                 Give your time and energy to serve alongside us, or sign up as a mentor and be paired with a student in your field or trade.
@@ -255,7 +268,7 @@ export default function GetInvolved() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <Handshake className="h-12 w-12 text-primary mx-auto mb-4" />
+              <Handshake className="h-12 w-12 text-primary-ink mx-auto mb-4" />
               <h2 className="mb-4">Partner With Us</h2>
               <p className="text-xl text-muted-foreground">
                 Corporate partnerships and collaborations for greater impact
@@ -319,10 +332,10 @@ export default function GetInvolved() {
       </section>
 
       {/* Events Preview */}
-      <section id="events" className="py-16 md:py-24 bg-muted/30">
+      <section id="events" className="py-16 md:py-24 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <Calendar className="h-12 w-12 text-primary mx-auto mb-4" />
+            <Calendar className="h-12 w-12 text-primary-ink mx-auto mb-4" />
             <h2 className="mb-4">Events & Programs</h2>
             <p className="text-xl text-muted-foreground">
               Join us at our next gathering
@@ -334,10 +347,10 @@ export default function GetInvolved() {
               <Card key={index} className="hover:shadow-glow transition-all duration-300">
                 <CardHeader>
                   <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <event.icon className="h-7 w-7 text-primary" />
+                    <event.icon className="h-7 w-7 text-primary-ink" />
                   </div>
                   <CardTitle className="text-xl">{event.title}</CardTitle>
-                  <p className="text-sm font-semibold text-primary">{event.date}</p>
+                  <p className="text-sm font-semibold text-primary-ink">{event.date}</p>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">{event.description}</p>

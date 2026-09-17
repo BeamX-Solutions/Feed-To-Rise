@@ -26,6 +26,8 @@ export default {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
           glow: "hsl(var(--primary-glow))",
+          // Text/icon-safe orange; flips lighter on navy + ink surfaces.
+          ink: "hsl(var(--primary-ink))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -50,6 +52,19 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        /* Feed to Rise brand ramp. Prefer the semantic tokens above; reach
+           for these when a surface is deliberately navy/paper regardless of
+           the theme (logo, tier chips, ground panels). */
+        brand: {
+          lead: "hsl(var(--brand-lead))",
+          "lead-soft": "hsl(var(--brand-lead-soft))",
+          ground: "hsl(var(--brand-ground))",
+          "ground-deep": "hsl(var(--brand-ground-deep))",
+          accent: "hsl(var(--brand-accent))",
+          paper: "hsl(var(--brand-paper))",
+          ink: "hsl(var(--brand-ink))",
+          bronze: "hsl(var(--brand-bronze))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -99,6 +114,7 @@ export default {
       backgroundImage: {
         "gradient-hero": "var(--gradient-hero)",
         "gradient-card": "var(--gradient-card)",
+        "gradient-ground": "var(--gradient-ground)",
       },
       boxShadow: {
         glow: "var(--shadow-glow)",

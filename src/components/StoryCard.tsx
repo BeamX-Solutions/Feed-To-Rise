@@ -28,7 +28,7 @@ export const StoryCard = ({ title, excerpt, date, image, slug }: StoryCardProps)
           <Calendar className="h-3 w-3 mr-1" />
           <time dateTime={date}>{new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
         </div>
-        <h3 className="text-xl font-bold group-hover:text-primary transition-colors line-clamp-2">
+        <h3 className="text-xl font-bold group-hover:text-primary-ink transition-colors line-clamp-2">
           {title}
         </h3>
       </CardHeader>

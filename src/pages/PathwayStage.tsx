@@ -19,27 +19,27 @@ export default function PathwayStage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-background">
+      <section data-surface="navy" className="relative overflow-hidden bg-background">
         <div className="absolute inset-0">
           <img
             src={stage.image}
             alt=""
             aria-hidden="true"
-            className="h-full w-full object-cover"
-            style={{ filter: "grayscale(70%) contrast(1.05)" }}
+            className="photo-wash h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-background/75" />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/35 via-background/50 to-background/85" />
+          <div className="absolute inset-0 bg-brand-ground/75" />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-ground-deep/70 via-brand-ground/60 to-brand-ground-deep/90" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_55%,hsl(var(--brand-lead)/0.22),transparent_58%)]" />
         </div>
 
         <div className="container relative z-10 mx-auto px-4 py-16 md:py-24">
           <div className="max-w-3xl mx-auto text-center space-y-6 animate-fade-in">
             <div className="flex justify-center">
               <div className="w-20 h-20 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center">
-                <stage.icon className="h-10 w-10 text-primary" />
+                <stage.icon className="h-10 w-10 text-primary-ink" />
               </div>
             </div>
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary">
+            <p className="eyebrow text-sm">
               Step {stage.number} · {stage.tagline}
             </p>
             <h1>{stage.fullName}</h1>
@@ -69,7 +69,7 @@ export default function PathwayStage() {
                     >
                       <CardContent className="pt-8 space-y-4">
                         <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
-                          <item.icon className="h-7 w-7 text-primary" />
+                          <item.icon className="h-7 w-7 text-primary-ink" />
                         </div>
                         <h3 className="text-xl font-bold">{item.title}</h3>
                         <p className="text-muted-foreground">{item.description}</p>
@@ -85,10 +85,10 @@ export default function PathwayStage() {
 
       {/* Quote */}
       {stage.quote && (
-        <section className="py-16 md:py-24 bg-primary/5 border-y border-primary/10">
+        <section data-surface="navy" className="bg-gradient-ground py-16 text-foreground md:py-24">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center space-y-6">
-              <Heart className="h-12 w-12 text-primary mx-auto animate-heart-pulse" fill="currentColor" />
+              <Heart className="h-12 w-12 text-primary-ink mx-auto animate-heart-pulse" fill="currentColor" />
               <p className="text-2xl md:text-3xl font-bold text-balance">“{stage.quote}”</p>
             </div>
           </div>

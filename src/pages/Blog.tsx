@@ -52,7 +52,7 @@ export default function Blog() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-hero">
+      <section data-surface="navy" className="bg-gradient-ground py-16 text-foreground md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6 animate-fade-in">
             <h1>Stories & News</h1>

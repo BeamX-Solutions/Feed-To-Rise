@@ -79,10 +79,10 @@ const programs = [
 ];
 
 const impactStats = [
-  { label: "Meals shared since 2020", value: "1000s", icon: Package, color: "text-primary" },
-  { label: "Annual outreaches, 2020–2025", value: "6", icon: TrendingUp, color: "text-primary" },
-  { label: "States reached since 2020", value: "8", icon: Heart, color: "text-primary" },
-  { label: "States served in one day, 2025", value: "7", icon: Users, color: "text-primary" }
+  { label: "Meals shared since 2020", value: "1000s", icon: Package, color: "text-primary-ink" },
+  { label: "Annual outreaches, 2020–2025", value: "6", icon: TrendingUp, color: "text-primary-ink" },
+  { label: "States reached since 2020", value: "8", icon: Heart, color: "text-primary-ink" },
+  { label: "States served in one day, 2025", value: "7", icon: Users, color: "text-primary-ink" }
 ];
 
 const testimonials = [
@@ -110,7 +110,7 @@ export default function Impact() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-hero">
+      <section data-surface="navy" className="bg-gradient-ground py-16 text-foreground md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6 animate-fade-in">
             <h1>Our Work & Impact</h1>
@@ -133,7 +133,7 @@ export default function Impact() {
               {stageLinks.map((stage) => (
                 <Button key={stage.slug} asChild variant="outline" className="group">
                   <Link to={`/pathway/${stage.slug}`}>
-                    <stage.icon className="mr-2 h-4 w-4 text-primary" />
+                    <stage.icon className="mr-2 h-4 w-4 text-primary-ink" />
                     {stage.label}
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
@@ -151,15 +151,15 @@ export default function Impact() {
               >
                 <CardHeader>
                   <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <program.icon className="h-7 w-7 text-primary" />
+                    <program.icon className="h-7 w-7 text-primary-ink" />
                   </div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">{program.stage}</p>
+                  <p className="eyebrow mb-1">{program.stage}</p>
                   <CardTitle className="text-xl">{program.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-muted-foreground">{program.description}</p>
                   <div className="pt-4 border-t border-border">
-                    <p className="text-sm font-semibold text-primary">{program.impact}</p>
+                    <p className="text-sm font-semibold text-primary-ink">{program.impact}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -178,7 +178,7 @@ export default function Impact() {
                 >
                   <AccordionTrigger className="hover:no-underline">
                     <div className="flex items-center gap-4 text-left">
-                      <program.icon className="h-6 w-6 text-primary shrink-0" />
+                      <program.icon className="h-6 w-6 text-primary-ink shrink-0" />
                       <span className="font-semibold">{program.title}</span>
                     </div>
                   </AccordionTrigger>
@@ -206,7 +206,7 @@ export default function Impact() {
                   <div className="mx-auto mb-2">
                     <stat.icon className={`h-10 w-10 ${stat.color}`} />
                   </div>
-                  <CardTitle className="text-4xl font-bold text-primary">{stat.value}</CardTitle>
+                  <CardTitle className="text-4xl font-bold text-primary-ink">{stat.value}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>
@@ -219,7 +219,7 @@ export default function Impact() {
 
 
       {/* Our Journey Section */}
-      <section className="py-16 md:py-24 bg-muted/30">
+      <section className="py-16 md:py-24 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="mb-4">Our Journey (2020-2024)</h2>
@@ -234,7 +234,7 @@ export default function Impact() {
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="bg-primary/5 p-8 flex flex-col justify-center">
                   <div className="flex items-center gap-3 mb-4">
-                    <Calendar className="h-8 w-8 text-primary" />
+                    <Calendar className="h-8 w-8 text-primary-ink" />
                     <h3 className="text-3xl font-bold">2020</h3>
                   </div>
                   <p className="text-lg mb-4">The journey begins - our first Valentine's Day outreach</p>
@@ -264,7 +264,7 @@ export default function Impact() {
                 </div>
                 <div className="bg-primary/5 p-8 flex flex-col justify-center md:order-2">
                   <div className="flex items-center gap-3 mb-4">
-                    <Calendar className="h-8 w-8 text-primary" />
+                    <Calendar className="h-8 w-8 text-primary-ink" />
                     <h3 className="text-3xl font-bold">2021</h3>
                   </div>
                   <p className="text-lg mb-4">Expanding our reach</p>
@@ -283,7 +283,7 @@ export default function Impact() {
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="bg-primary/5 p-8 flex flex-col justify-center">
                   <div className="flex items-center gap-3 mb-4">
-                    <Calendar className="h-8 w-8 text-primary" />
+                    <Calendar className="h-8 w-8 text-primary-ink" />
                     <h3 className="text-3xl font-bold">2022</h3>
                   </div>
                   <p className="text-lg mb-4">Strengthening our presence in the Southeast</p>
@@ -312,7 +312,7 @@ export default function Impact() {
                 </div>
                 <div className="bg-primary/5 p-8 flex flex-col justify-center md:order-2">
                   <div className="flex items-center gap-3 mb-4">
-                    <Calendar className="h-8 w-8 text-primary" />
+                    <Calendar className="h-8 w-8 text-primary-ink" />
                     <h3 className="text-3xl font-bold">2023</h3>
                   </div>
                   <p className="text-lg mb-4">Reaching the South-South region</p>
@@ -331,7 +331,7 @@ export default function Impact() {
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="bg-primary/5 p-8 flex flex-col justify-center">
                   <div className="flex items-center gap-3 mb-4">
-                    <Calendar className="h-8 w-8 text-primary" />
+                    <Calendar className="h-8 w-8 text-primary-ink" />
                     <h3 className="text-3xl font-bold">2024</h3>
                   </div>
                   <p className="text-lg mb-4">Our most expansive year yet</p>
@@ -372,7 +372,7 @@ export default function Impact() {
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <CardContent className="pt-8 space-y-6">
-                  <Quote className="h-10 w-10 text-primary/30" />
+                  <Quote className="h-10 w-10 text-primary-ink/30" />
                   <p className="text-muted-foreground italic">{testimonial.quote}</p>
                   <div className="flex items-center gap-4 pt-4 border-t border-border">
                     <img

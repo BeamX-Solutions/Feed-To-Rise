@@ -2,88 +2,137 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ============================================================
+   Feed to Rise design system
+   All colors MUST be HSL so Tailwind can compose them with /alpha.
+
+   Brand palette
+   -------------
+   #F26F1E  Lead / warmth   22 89% 53%
+   #12395C  Trust / ground  208 67% 22%
+   #2372AC  Accent          205 66% 41%
+   #FBF3E8  Paper           35 70% 95%
+   #1B1916  Ink / text      36 10% 10%
+   ============================================================ */
 
 @layer base {
   :root {
-    /* SLOTS Default Theme - Bold Compassion */
-    --background: 0 0% 10%;
-    --foreground: 0 0% 98%;
+    /* Raw brand tokens. Reference these only when a semantic token
+       does not express the intent (e.g. a deliberately navy panel). */
+    --brand-lead: 22 89% 53%;
+    --brand-lead-soft: 22 89% 63%;
+    --brand-ground: 208 67% 22%;
+    --brand-ground-deep: 208 70% 16%;
+    --brand-accent: 205 66% 41%;
+    --brand-paper: 35 70% 95%;
+    --brand-ink: 36 10% 10%;
+    --brand-bronze: 28 71% 64%;
 
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 98%;
+    /* Semantic tokens for the paper surface */
+    --background: 35 70% 95%;
+    --foreground: 36 10% 10%;
 
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 98%;
+    --card: 38 67% 98%;
+    --card-foreground: 36 10% 10%;
 
-    --primary: 0 73% 57%;
+    --popover: 38 67% 98%;
+    --popover-foreground: 36 10% 10%;
+
+    /* Fills use the pure brand orange. Orange TEXT on paper only clears
+       2.7:1, so text and icons use --primary-ink, a deepened orange that
+       clears 5.6:1 and flips lighter on the navy/ink surfaces below. */
+    --primary: 22 89% 53%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 0 73% 67%;
+    --primary-glow: 22 89% 63%;
+    --primary-ink: 22 92% 34%;
 
-    --secondary: 0 0% 20%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 208 67% 22%;
+    --secondary-foreground: 35 70% 95%;
 
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 35 42% 90%;
+    --muted-foreground: 36 12% 36%;
 
-    --accent: 0 73% 57%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 205 66% 41%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 72% 48%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 25%;
-    --input: 0 0% 25%;
-    --ring: 0 73% 57%;
+    --border: 35 28% 86%;
+    --input: 35 28% 86%;
+    --ring: 22 92% 34%;
 
-    --radius: 0.75rem;
+    --radius: 0.875rem;
 
-    /* Custom Design Tokens */
-    --gradient-hero: linear-gradient(135deg, hsl(0 73% 57% / 0.15), hsl(0 73% 67% / 0.05));
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 12%), hsl(0 0% 10%));
-    --shadow-glow: 0 0 40px hsl(0 73% 57% / 0.2);
-    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.4);
+    /* Composed tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(22 89% 53% / 0.12), hsl(205 66% 41% / 0.08));
+    --gradient-card: linear-gradient(180deg, hsl(38 67% 98%), hsl(35 60% 96%));
+    --gradient-ground: linear-gradient(140deg, hsl(208 67% 22%), hsl(208 70% 16%));
+    --shadow-glow: 0 10px 30px -12px hsl(208 67% 22% / 0.28);
+    --shadow-card: 0 2px 10px -4px hsl(36 10% 10% / 0.12);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Warm Evolution Theme */
-  [data-theme="warm"] {
-    --background: 40 30% 94%;
-    --foreground: 0 0% 15%;
-    --primary: 14 85% 57%;
-    --primary-glow: 14 85% 67%;
-    --card: 40 30% 98%;
-    --card-foreground: 0 0% 15%;
-    --gradient-hero: linear-gradient(135deg, hsl(14 85% 57% / 0.15), hsl(39 85% 60% / 0.1));
-    --shadow-glow: 0 0 30px hsl(14 85% 57% / 0.25);
+  /*  Navy surface.
+      Put data-surface="navy" on a section and every semantic token inside
+      flips to the on-ground palette, so bg-card / text-muted-foreground /
+      border-border keep working without per-element overrides. */
+  [data-surface="navy"] {
+    --background: 208 67% 22%;
+    --foreground: 35 70% 95%;
+
+    --card: 208 52% 27%;
+    --card-foreground: 35 70% 95%;
+
+    --popover: 208 52% 27%;
+    --popover-foreground: 35 70% 95%;
+
+    --secondary: 35 70% 95%;
+    --secondary-foreground: 208 67% 22%;
+
+    --muted: 208 45% 30%;
+    --muted-foreground: 35 34% 82%;
+
+    --accent: 205 66% 55%;
+    --accent-foreground: 208 70% 16%;
+
+    /* Lighter orange so labels and icons clear 5.4:1 against navy. */
+    --primary-ink: 24 92% 66%;
+
+    --border: 208 38% 36%;
+    --input: 208 38% 36%;
+    --ring: 24 92% 66%;
+
+    --gradient-card: linear-gradient(180deg, hsl(208 52% 27%), hsl(208 60% 23%));
+    --shadow-glow: 0 10px 30px -12px hsl(208 70% 10% / 0.55);
+    --shadow-card: 0 2px 12px -4px hsl(208 70% 10% / 0.45);
   }
 
-  /* Global Flow Theme */
-  [data-theme="global"] {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 10%;
-    --primary: 152 69% 42%;
-    --primary-glow: 45 90% 51%;
-    --accent: 45 90% 51%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
-    --gradient-hero: linear-gradient(135deg, hsl(152 69% 42% / 0.12), hsl(45 90% 51% / 0.08));
-    --shadow-glow: 0 0 35px hsl(152 69% 42% / 0.2);
-  }
+  /*  Ink surface, for the occasional near-black band. */
+  [data-surface="ink"] {
+    --background: 36 10% 10%;
+    --foreground: 35 70% 95%;
 
-  /* Minimal Pulse Theme */
-  [data-theme="minimal"] {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
-    --primary: 330 81% 71%;
-    --primary-glow: 330 81% 81%;
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 10%;
-    --border: 0 0% 90%;
-    --gradient-hero: linear-gradient(135deg, hsl(330 81% 71% / 0.1), hsl(330 81% 81% / 0.05));
-    --shadow-glow: 0 0 25px hsl(330 81% 71% / 0.15);
+    --card: 36 9% 14%;
+    --card-foreground: 35 70% 95%;
+
+    --popover: 36 9% 14%;
+    --popover-foreground: 35 70% 95%;
+
+    --secondary: 35 70% 95%;
+    --secondary-foreground: 36 10% 10%;
+
+    --muted: 36 8% 18%;
+    --muted-foreground: 35 20% 76%;
+
+    --primary-ink: 24 92% 66%;
+
+    --border: 36 8% 24%;
+    --input: 36 8% 24%;
+    --ring: 24 92% 66%;
+
+    --gradient-card: linear-gradient(180deg, hsl(36 9% 14%), hsl(36 10% 11%));
+    --shadow-card: 0 2px 12px -4px hsl(0 0% 0% / 0.5);
   }
 }
 
@@ -97,26 +146,53 @@ All colors MUST be HSL.
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
+  /* Headlines are the loud part of the brand: heavy weight, tight tracking. */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight;
+    @apply font-extrabold tracking-tight;
+    letter-spacing: -0.025em;
   }
 
   h1 {
     @apply text-4xl md:text-5xl lg:text-6xl;
+    letter-spacing: -0.035em;
   }
 
   h2 {
     @apply text-3xl md:text-4xl lg:text-5xl;
+    letter-spacing: -0.03em;
   }
 
   h3 {
     @apply text-2xl md:text-3xl;
+  }
+
+  ::selection {
+    background-color: hsl(var(--brand-lead) / 0.25);
+  }
+}
+
+@layer components {
+  /* Small uppercase label that sits above a headline, like the "February 14"
+     eyebrow on the brand board. */
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.2em] text-primary-ink;
+  }
+
+  /* Highlights a word inside a headline in the lead colour. */
+  /* Large headline text, so the pure brand orange is safe here. */
+  .accent-word {
+    @apply text-primary;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Paints a photo in brand colour: desaturated, then washed navy→orange. */
+  .photo-wash {
+    filter: grayscale(55%) contrast(1.05);
   }
 
   .animate-pulse-slow {

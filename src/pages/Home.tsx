@@ -58,7 +58,7 @@ export default function Home() {
       <Hero />
 
       {/* Pathway Section */}
-      <section className="py-16 md:py-24 bg-muted/30">
+      <section className="py-16 md:py-24 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="mb-4">One act of care can begin a lifetime of possibility</h2>
@@ -78,15 +78,15 @@ export default function Home() {
                 <Card className="h-full text-center hover:shadow-glow hover:border-primary/40 transition-all duration-300">
                   <CardHeader>
                     <div className="mx-auto mb-4 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                      <step.icon className="h-8 w-8 text-primary" />
+                      <step.icon className="h-8 w-8 text-primary-ink" />
                     </div>
-                    <p className="text-sm font-bold tracking-widest text-primary">{step.number}</p>
+                    <p className="text-sm font-bold tracking-widest text-primary-ink">{step.number}</p>
                     <CardTitle className="text-2xl">{step.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <p className="text-muted-foreground">{step.description}</p>
-                    <p className="pt-4 border-t border-border text-sm font-semibold text-primary">{step.outcome}</p>
-                    <span className="inline-flex items-center text-sm font-semibold text-primary">
+                    <p className="pt-4 border-t border-border text-sm font-semibold text-primary-ink">{step.outcome}</p>
+                    <span className="inline-flex items-center text-sm font-semibold text-primary-ink">
                       Explore {step.title}
                       <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>
@@ -118,7 +118,7 @@ export default function Home() {
                 className="w-full rounded-lg object-cover aspect-[5/4] shadow-glow"
               />
               <div className="absolute -bottom-5 right-4 max-w-[14rem] rounded-lg border border-border bg-card p-5 shadow-glow">
-                <MapPin className="h-5 w-5 text-primary" />
+                <MapPin className="h-5 w-5 text-primary-ink" />
                 <p className="mt-2 text-sm font-semibold">Rooted in communities</p>
                 <p className="mt-1 text-xs text-muted-foreground">Anambra, Lagos, Abuja, Benin, Nasarawa, Enugu, and Port Harcourt.</p>
               </div>
@@ -131,14 +131,14 @@ export default function Home() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <Card className="hover:shadow-glow transition-all">
                   <CardContent className="pt-6">
-                    <Users className="h-5 w-5 text-primary" />
+                    <Users className="h-5 w-5 text-primary-ink" />
                     <p className="mt-4 font-semibold">Community powered</p>
                     <p className="mt-1 text-sm text-muted-foreground">Volunteers and local relationships guide every outreach.</p>
                   </CardContent>
                 </Card>
                 <Card className="hover:shadow-glow transition-all">
                   <CardContent className="pt-6">
-                    <Sprout className="h-5 w-5 text-primary" />
+                    <Sprout className="h-5 w-5 text-primary-ink" />
                     <p className="mt-4 font-semibold">Built for what follows</p>
                     <p className="mt-1 text-sm text-muted-foreground">We measure progress beyond immediate support.</p>
                   </CardContent>
@@ -156,7 +156,7 @@ export default function Home() {
       </section>
 
       {/* From the Field */}
-      <section className="py-16 md:py-24 bg-muted/30">
+      <section className="py-16 md:py-24 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="mb-2">Care you can recognise</h2>
@@ -199,7 +199,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-primary/5 border-y border-primary/10">
+      <section data-surface="navy" className="bg-gradient-ground py-16 text-foreground md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-8">
             <h2>Help someone take their next step</h2>

@@ -21,7 +21,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-hero">
+      <section data-surface="navy" className="bg-gradient-ground py-16 text-foreground md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6 animate-fade-in">
             <h1>Contact Us</h1>
@@ -87,11 +87,11 @@ export default function Contact() {
                 <CardContent className="pt-8 space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                      <Phone className="h-6 w-6 text-primary" />
+                      <Phone className="h-6 w-6 text-primary-ink" />
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2">Call Us</h3>
-                      <a href="tel:+2349041401167" className="text-primary hover:underline block">
+                      <a href="tel:+2349041401167" className="text-primary-ink hover:underline block">
                         +234 904 140 1167
                       </a>
                       <p className="text-sm text-muted-foreground mt-2">Mmesoma Anita Ogbuagu</p>
@@ -101,7 +101,7 @@ export default function Contact() {
 
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                      <Mail className="h-6 w-6 text-primary" />
+                      <Mail className="h-6 w-6 text-primary-ink" />
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2">Send an enquiry</h3>
@@ -111,7 +111,7 @@ export default function Contact() {
 
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                      <MapPin className="h-6 w-6 text-primary" />
+                      <MapPin className="h-6 w-6 text-primary-ink" />
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2">We Serve</h3>
@@ -156,7 +156,7 @@ export default function Contact() {
                       href="https://facebook.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-primary-ink transition-colors"
                       aria-label="Facebook"
                     >
                       <Facebook className="h-5 w-5" />
@@ -165,7 +165,7 @@ export default function Contact() {
                       href="https://x.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-primary-ink transition-colors"
                       aria-label="X (formerly Twitter)"
                     >
                       <XIcon className="h-5 w-5" />
@@ -174,7 +174,7 @@ export default function Contact() {
                       href="https://instagram.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-primary-ink transition-colors"
                       aria-label="Instagram"
                     >
                       <Instagram className="h-5 w-5" />

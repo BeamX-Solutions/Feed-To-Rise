@@ -22,7 +22,7 @@ export default function About() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-hero">
+      <section data-surface="navy" className="bg-gradient-ground py-16 text-foreground md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6 animate-fade-in">
             <h1>About Feed to Rise</h1>
@@ -40,7 +40,7 @@ export default function About() {
             <Card className="hover:shadow-glow transition-all">
               <CardContent className="pt-8 space-y-4">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Target className="h-6 w-6 text-primary" />
+                  <Target className="h-6 w-6 text-primary-ink" />
                 </div>
                 <h3>Our Mission</h3>
                 <p className="text-muted-foreground">
@@ -52,7 +52,7 @@ export default function About() {
             <Card className="hover:shadow-glow transition-all">
               <CardContent className="pt-8 space-y-4">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Eye className="h-6 w-6 text-primary" />
+                  <Eye className="h-6 w-6 text-primary-ink" />
                 </div>
                 <h3>Our Vision</h3>
                 <p className="text-muted-foreground">
@@ -65,7 +65,7 @@ export default function About() {
       </section>
 
       {/* Timeline */}
-      <section className="py-16 md:py-24 bg-muted/30">
+      <section className="py-16 md:py-24 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="mb-4">Our Journey</h2>
@@ -134,10 +134,10 @@ export default function About() {
       </section>
 
       {/* Values Recap */}
-      <section className="py-16 md:py-24 bg-primary/5 border-y border-primary/10">
+      <section data-surface="navy" className="bg-gradient-ground py-16 text-foreground md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <Heart className="h-16 w-16 text-primary mx-auto animate-heart-pulse" fill="currentColor" />
+            <Heart className="h-16 w-16 text-primary-ink mx-auto animate-heart-pulse" fill="currentColor" />
             <h2>Driven by Compassion</h2>
             <p className="text-xl text-muted-foreground text-balance">
               Every initiative, every outreach, every act of kindness is rooted in our belief that love and compassion can transform lives and communities. We don't just provide aid – we build relationships, restore dignity, and create lasting change.
