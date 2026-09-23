@@ -44,7 +44,10 @@ export const Footer = () => (
         </div>
       </div>
       <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-sm text-muted-foreground md:flex-row">
-        <p>© {new Date().getFullYear()} Feed to Rise. All rights reserved.</p>
+        <div className="text-center md:text-left">
+          <p>© {new Date().getFullYear()} Feed to Rise. All rights reserved.</p>
+          <p className="mt-1 text-xs">Registered with the Corporate Affairs Commission (CAC), Nigeria · Reg. No. 6904063</p>
+        </div>
         <div className="flex items-center gap-6"><Link to="/privacy" className="transition-colors hover:text-primary-ink">Privacy Policy</Link><a href="https://beamxsolutions.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-primary-ink">Developed by BeamX Solutions</a></div>
       </div>
     </div>
