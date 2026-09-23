@@ -102,7 +102,8 @@ const testimonials = [
     quote: "Most of all, we made people smile and feel loved. Raising awareness about the importance of compassion in the community is our greatest achievement.",
     author: "Mmesoma Anita Ogbuagu",
     location: "Feed to Rise Convener",
-    image: "/images/anambra-lagos-2023-III.PNG"
+    image: "/images/Mmesoma.jpeg",
+    position: "object-top"
   }
 ];
 
@@ -378,7 +379,7 @@ export default function Impact() {
                     <img
                       src={testimonial.image}
                       alt={testimonial.author}
-                      className="w-12 h-12 rounded-full object-cover"
+                      className={`w-12 h-12 rounded-full object-cover ${testimonial.position ?? ""}`}
                     />
                     <div>
                       <p className="font-semibold">{testimonial.author}</p>

@@ -58,8 +58,8 @@ export const Hero = () => {
 
           {/* Heading */}
           <h1 className="text-balance">
-            <span className="block text-foreground">Every Person Deserves</span>
-            <span className="accent-word mt-2 block">The Chance to Rise</span>
+            <span className="block text-foreground">Feed the Need.</span>
+            <span className="accent-word mt-2 block">Fuel the Future.</span>
           </h1>
 
           {/* Tagline */}

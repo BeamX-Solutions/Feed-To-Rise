@@ -12,7 +12,7 @@ const milestones = [
 ];
 
 const team = [
-  { name: "Mmesoma Anita Ogbuagu", role: "Feed to Rise Convener", image: "/images/anambra-lagos-2024-III.PNG" },
+  { name: "Mmesoma Anita Ogbuagu", role: "Feed to Rise Convener", image: "/images/Mmesoma.jpeg", position: "object-top" },
   { name: "Volunteer Team", role: "Community Champions", image: "/images/anambra-lagos-2021-II.jpg" },
   { name: "Field Coordinators", role: "State Leaders", image: "/images/anambra-lagos-2023-II.PNG" },
   { name: "Our Partners", role: "Supporting Organizations", image: "/images/anambra-lagos-2022-II.PNG" }
@@ -120,7 +120,7 @@ export default function About() {
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className={`w-full h-full object-cover ${member.position ?? ""} transition-transform duration-300 group-hover:scale-105`}
                   />
                 </div>
                 <CardContent className="pt-6 text-center">
