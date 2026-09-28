@@ -21,7 +21,13 @@ type TeamMember = {
 };
 
 const team: TeamMember[] = [
-  { name: "Mmesoma Anita Ogbuagu", role: "Feed to Rise Convener", image: "/images/Mmesoma.jpeg", position: "object-top" },
+  {
+    name: "Mmesoma Anita Ogbuagu",
+    role: "Convener & Programs Manager",
+    image: "/images/Mmesoma.jpeg",
+    position: "object-top",
+    summary: "Leads delivery of the Feed to Rise Pathway, from field implementation and impact reporting to coordinating volunteers at events like SLOTS."
+  },
   {
     name: "Dr. Unuakpotovo Oyefia-Emakpo",
     credentials: "MBBS",
