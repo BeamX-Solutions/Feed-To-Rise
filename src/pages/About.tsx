@@ -11,8 +11,32 @@ const milestones = [
   { year: "2026", title: "Feed to Rise", description: "Evolving from annual relief into a year-round pathway: Feed to Nourish, Feed to Equip, and Rise. Feeding the body is the first step to feeding the mind." }
 ];
 
-const team = [
+type TeamMember = {
+  name: string;
+  role: string;
+  image: string;
+  position?: string;
+  credentials?: string;
+  summary?: string;
+};
+
+const team: TeamMember[] = [
   { name: "Mmesoma Anita Ogbuagu", role: "Feed to Rise Convener", image: "/images/Mmesoma.jpeg", position: "object-top" },
+  {
+    name: "Dr. Unuakpotovo Oyefia-Emakpo",
+    credentials: "MBBS",
+    role: "Monitoring & Evaluation Adviser",
+    image: "/images/Oyefia-Emakpo.png",
+    position: "object-top",
+    summary: "Oversees how we measure program outcomes and impact, and keeps us accountable."
+  },
+  {
+    name: "Cynthia A. Kenechukwu",
+    role: "Partnerships & Fundraising Officer",
+    image: "/images/Cynthia.png",
+    position: "object-top",
+    summary: "Builds relationships with donors, sponsors, and grant-makers, and leads our proposals and fundraising campaigns."
+  },
   { name: "Volunteer Team", role: "Community Champions", image: "/images/anambra-lagos-2021-II.jpg" },
   { name: "Field Coordinators", role: "State Leaders", image: "/images/anambra-lagos-2023-II.PNG" },
   { name: "Our Partners", role: "Supporting Organizations", image: "/images/anambra-lagos-2022-II.PNG" }
@@ -113,7 +137,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {team.map((member, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-glow transition-all group">
                 <div className="aspect-square overflow-hidden">
@@ -125,7 +149,13 @@ export default function About() {
                 </div>
                 <CardContent className="pt-6 text-center">
                   <h3 className="text-lg font-bold mb-1">{member.name}</h3>
+                  {member.credentials && (
+                    <p className="text-xs font-semibold tracking-wide text-muted-foreground mb-1">{member.credentials}</p>
+                  )}
                   <p className="text-sm text-muted-foreground">{member.role}</p>
+                  {member.summary && (
+                    <p className="text-sm text-muted-foreground mt-3 text-balance">{member.summary}</p>
+                  )}
                 </CardContent>
               </Card>
             ))}
