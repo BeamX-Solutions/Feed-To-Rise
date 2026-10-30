@@ -88,7 +88,7 @@ export const Hero = () => {
           {/* Quick Stats */}
           <div className="pt-6 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
             {[
-              { value: "7", label: "States in One Day (2025)" },
+              { value: "7", label: "States in One Day (2026)" },
               { value: "1000s", label: "Meals Shared Since 2020" },
               { value: "6", label: "Annual Outreaches" },
               { value: "Feb 14", label: "Annual Street Outreach" },

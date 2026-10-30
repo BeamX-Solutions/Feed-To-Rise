@@ -82,7 +82,7 @@ const impactStats = [
   { label: "Meals shared since 2020", value: "1000s", icon: Package, color: "text-primary-ink" },
   { label: "Annual outreaches, 2020–2025", value: "6", icon: TrendingUp, color: "text-primary-ink" },
   { label: "States reached since 2020", value: "8", icon: Heart, color: "text-primary-ink" },
-  { label: "States served in one day, 2025", value: "7", icon: Users, color: "text-primary-ink" }
+  { label: "States served in one day, 2026", value: "7", icon: Users, color: "text-primary-ink" }
 ];
 
 const testimonials = [
